@@ -1,0 +1,25 @@
+{
+  "name": "gorriecoe/silverstripe-htmltag",
+  "description": "Provides a simply method for wrapping strings with html tags.",
+  "type": "silverstripe-vendormodule",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Gorrie Coe",
+      "email": "gorriecoe@gmail.com"
+    }
+  ],
+  "keywords": [
+    "silverstripe",
+    "html",
+    "templates",
+    "markup"
+  ],
+  "homepage": "http://github.com/gorriecoe/silverstripe-htmltag",
+  "require": {
+    "silverstripe/framework": "^4"
+  },
+  "extra": {
+    "installer-name": "htmltag"
+  }
+}
