@@ -19,16 +19,17 @@ class TagTemplateProvider implements TemplateGlobalProvider
     public static function get_template_global_variables()
     {
         return [
-            'tag' => 'tag',
-            'h1' => 'h1',
-            'h2' => 'h2',
-            'h3' => 'h3',
-            'h4' => 'h4',
-            'h5' => 'h5',
-            'h6' => 'h6',
-            'p' => 'p',
-            'div' => 'div',
-            'span' => 'span'
+            'tag',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'p',
+            'div',
+            'span',
+            'img',
         ];
     }
 
@@ -122,5 +123,14 @@ class TagTemplateProvider implements TemplateGlobalProvider
     public static function span($string)
     {
         return HTMLTag::create($string, 'span');
+    }
+
+    /**
+     * @param $string
+     * @return HTMLTag
+     */
+    public static function img($string)
+    {
+        return HTMLTag::create($string, 'img');
     }
 }
