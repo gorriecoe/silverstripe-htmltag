@@ -4,6 +4,7 @@ namespace gorriecoe\HTMLTag\View;
 
 use SilverStripe\View\ViewableData;
 use SilverStripe\Core\Convert;
+use InvalidArgumentException;
 
 /**
  * HTMLTag
@@ -99,6 +100,7 @@ class HTMLTag extends ViewableData
     public function setAttribute($name = null, $value)
     {
         $this->addAttribute($name, $value);
+        return $this;
     }
 
     /**
@@ -200,11 +202,10 @@ class HTMLTag extends ViewableData
      * Returns the rendered html markup
      * @return string
      */
-    public function Render($value='')
+    public function Render()
     {
         $string = $this->string;
         $tag = $this->tag;
-
 
         $classes = $this->classes;
         if (Count($classes)) {
@@ -217,7 +218,7 @@ class HTMLTag extends ViewableData
             $this->addAttribute('class', implode(' ', $classes));
         }
 
-        if ($this->isVoidElement()) {
+        if ($this->isVoidElement() && $string) {
             if ($voidAttributeName = $this->VoidElements[$tag]) {
                 $this->addAttribute($voidAttributeName, $string);
             } else {
