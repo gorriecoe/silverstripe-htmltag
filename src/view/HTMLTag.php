@@ -86,7 +86,7 @@ class HTMLTag extends ViewableData
      * @param string $value Attribute value
      * @return HTMLTag $this
      */
-    public function addAttribute($name = null, $value)
+    public function addAttribute($name = null, $value = null)
     {
         if ($value) {
             $this->attributes[$name] = $value;
@@ -97,7 +97,7 @@ class HTMLTag extends ViewableData
     /**
      * @alias addAttribute
      */
-    public function setAttribute($name = null, $value)
+    public function setAttribute($name = null, $value = null)
     {
         $this->addAttribute($name, $value);
         return $this;
